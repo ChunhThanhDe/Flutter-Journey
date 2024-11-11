@@ -6,6 +6,7 @@ class AppTheme {
     primarySwatch: Colors.blue,
     primaryColor: AppColors.primary,
     brightness: Brightness.light,
+    fontFamily: 'lato',
     sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
@@ -39,6 +40,7 @@ class AppTheme {
   static final darkTheme = ThemeData(
     primaryColor: AppColors.primary,
     brightness: Brightness.dark,
+    fontFamily: 'lato',
     sliderTheme: SliderThemeData(
       overlayShape: SliderComponentShape.noOverlay,
       activeTrackColor: const Color(0xffB7B7B7),

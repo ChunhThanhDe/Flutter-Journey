@@ -3,7 +3,7 @@ import 'package:flutter_journey/core/configs/theme/app_text_theme.dart';
 import 'package:flutter_journey/common/helpers/is_Desktop.dart';
 import 'package:flutter_journey/core/configs/theme/app_colors.dart';
 import 'package:flutter_journey/core/configs/theme/app_theme.dart';
-import 'package:flutter_journey/home_page.dart';
+import 'package:flutter_journey/presentation/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final textTheme = context.isDesktop(constraints.maxWidth) ? DesktopTextTheme() : MobileTextTheme();
+        final textTheme = context.isDesktop(constraints.maxWidth)
+            ? DesktopTextTheme()
+            : MobileTextTheme();
         return MaterialApp(
           title: 'Flutter Journey',
           debugShowCheckedModeBanner: false,
