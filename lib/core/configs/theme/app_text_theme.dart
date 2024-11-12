@@ -28,36 +28,66 @@ abstract class AppTextTheme {
 class DesktopTextTheme implements AppTextTheme {
   @override
   final h1 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 81, fontWeight: FontWeight.w900);
+      fontFamily: 'Lato',
+      fontSize: 81,
+      fontWeight: FontWeight.w900,
+      letterSpacing: 0.3);
   @override
   final h2 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 72, fontWeight: FontWeight.w900);
+      fontFamily: 'Lato',
+      fontSize: 72,
+      fontWeight: FontWeight.w900,
+      letterSpacing: 0.3);
   @override
   final h3 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 54, fontWeight: FontWeight.w900);
+      fontFamily: 'Lato',
+      fontSize: 54,
+      fontWeight: FontWeight.w900,
+      letterSpacing: 0.3);
   @override
   final h4 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 30, fontWeight: FontWeight.bold);
+      fontFamily: 'Lato',
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 0.3);
   @override
   final h5 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 24, fontWeight: FontWeight.bold);
+      fontFamily: 'Lato',
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 0.3);
   @override
   final h6 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 18, fontWeight: FontWeight.w900);
+      fontFamily: 'Lato',
+      fontSize: 18,
+      fontWeight: FontWeight.w900,
+      letterSpacing: 0.3);
 
   @override
   final subtitle1 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 16, fontWeight: FontWeight.bold);
+      fontFamily: 'Lato',
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 0.3);
   @override
   final subtitle2 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 14, fontWeight: FontWeight.bold);
+      fontFamily: 'Lato',
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 0.3);
 
   @override
   final paragraph20 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 20, fontWeight: FontWeight.normal);
+      fontFamily: 'Lato',
+      fontSize: 20,
+      fontWeight: FontWeight.normal,
+      letterSpacing: 0.3);
   @override
   final paragraph18 = const TextStyle(
-      fontFamily: 'Lato', fontSize: 18, fontWeight: FontWeight.normal);
+      fontFamily: 'Lato',
+      fontSize: 18,
+      fontWeight: FontWeight.normal,
+      letterSpacing: 0.3);
 
   @override
   final body = const TextStyle(

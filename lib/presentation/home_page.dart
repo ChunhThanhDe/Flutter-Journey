@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_journey/core/configs/theme/app_colors.dart';
 import 'package:flutter_journey/presentation/widget/app_header/app_header.dart';
+import 'package:flutter_journey/presentation/widget/intro/intro.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(child: AppHeader()),
+            SliverToBoxAdapter(child: Intro()),
           ],
         ),
       ),
