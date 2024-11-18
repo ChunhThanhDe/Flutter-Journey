@@ -3,7 +3,8 @@ class AppBreakpoints {
   static const tablet = 834;
   static const mobile = 375;
 
-  static const twoColLayoutMinWidth = 640;
+  static const twoColLayoutMinWidth = 800;
+  static const threeColLayoutMinWidth = 2000;
 }
 
 double horizontalPadding(double screenWidth) {
@@ -23,5 +24,15 @@ double sliverHorizontalPadding(double screenWidth) {
     return 28;
   } else {
     return 20;
+  }
+}
+
+int calculateCrossAxisCount(double screenWidth) {
+  if (screenWidth >= AppBreakpoints.threeColLayoutMinWidth) {
+    return 3;
+  } else if (screenWidth >= AppBreakpoints.twoColLayoutMinWidth) {
+    return 2;
+  } else {
+    return 1;
   }
 }
