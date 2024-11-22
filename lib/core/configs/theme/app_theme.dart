@@ -4,7 +4,7 @@ import 'package:flutter_journey/core/configs/theme/app_colors.dart';
 class AppTheme {
   static final lightTheme = ThemeData(
     primarySwatch: Colors.blue,
-    primaryColor: AppColors.primary,
+    primaryColor: AppColors.primaryYellow,
     brightness: Brightness.light,
     fontFamily: 'lato',
     sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay),
@@ -27,7 +27,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.primaryRed,
         elevation: 0,
         textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         shape: RoundedRectangleBorder(
@@ -38,7 +38,7 @@ class AppTheme {
   );
 
   static final darkTheme = ThemeData(
-    primaryColor: AppColors.primary,
+    primaryColor: AppColors.primaryYellow,
     brightness: Brightness.dark,
     fontFamily: 'lato',
     sliderTheme: SliderThemeData(
@@ -66,7 +66,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.primaryRed,
         elevation: 0,
         textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         shape: RoundedRectangleBorder(
