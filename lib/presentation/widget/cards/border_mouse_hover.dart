@@ -33,7 +33,7 @@ class _BorderMouseHoverState extends State<BorderMouseHover>
           return Container(
               margin: const EdgeInsets.all(2),
               decoration: BoxDecoration(
-                color: Colors.transparent, // AppColors.neutral5,
+                color: Colors.transparent,
                 border: Border.all(
                   color:
                       AppColors.primaryFlutter.withOpacity(_controller.value),

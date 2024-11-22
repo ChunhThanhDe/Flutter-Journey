@@ -7,51 +7,99 @@ import 'package:flutter_journey/presentation/widget/app_header/navigation_icon_b
 import 'package:flutter_journey/presentation/widget/app_header/navigation_link.dart';
 
 class AppHeader extends StatelessWidget {
-  const AppHeader({super.key});
+  const AppHeader({
+    super.key,
+    required this.onNavigateToProject,
+    required this.onNavigateToFlame,
+    required this.onNavigateToNewsletter,
+    required this.onNavigateToSponsorship,
+  });
+
+  final Future<void> Function() onNavigateToProject;
+  final Future<void> Function() onNavigateToFlame;
+  final Future<void> Function() onNavigateToNewsletter;
+  final Future<void> Function() onNavigateToSponsorship;
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     bool isWide = screenWidth > AppBreakpoints.tablet;
+
     return Container(
       color: AppColors.neutral7,
       child: isWide
-          ? const DesktopNavigationLayout()
-          : const MobileNavigationLayout(),
+          ? DesktopNavigationLayout(
+              onNavigateToProject: onNavigateToProject,
+              onNavigateToFlame: onNavigateToFlame,
+              onNavigateToNewsletter: onNavigateToNewsletter,
+              onNavigateToSponsorship: onNavigateToSponsorship,
+            )
+          : MobileNavigationLayout(
+              onNavigateToProject: onNavigateToProject,
+              onNavigateToFlame: onNavigateToFlame,
+              onNavigateToNewsletter: onNavigateToNewsletter,
+              onNavigateToSponsorship: onNavigateToSponsorship,
+            ),
     );
   }
 }
 
 class DesktopNavigationLayout extends StatelessWidget {
-  const DesktopNavigationLayout({super.key});
+  const DesktopNavigationLayout({
+    super.key,
+    required this.onNavigateToProject,
+    required this.onNavigateToFlame,
+    required this.onNavigateToNewsletter,
+    required this.onNavigateToSponsorship,
+  });
+
+  final Future<void> Function() onNavigateToProject;
+  final Future<void> Function() onNavigateToFlame;
+  final Future<void> Function() onNavigateToNewsletter;
+  final Future<void> Function() onNavigateToSponsorship;
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     bool isVeryWide = screenWidth > AppBreakpoints.desktop;
-    return SizedBox(
-      height: 64,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(width: isVeryWide ? 80 : 28),
-          Image.asset(AppImages.logoImg),
-          const Spacer(),
-          const NavigationLink(text: 'Tutorials'),
-          const NavigationLink(text: 'Courses'),
-          const NavigationLink(text: 'Newsletter'),
-          const NavigationLink(text: 'Sponsorship'),
-          NavigationIconButton(child: Image.asset(AppImages.searchIcon)),
-          NavigationIconButton(child: Image.asset(AppImages.toggleIcon)),
-          SizedBox(width: isVeryWide ? 80 : 28),
-        ],
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: SizedBox(
+        height: 64,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(width: isVeryWide ? 80 : 28),
+            Image.asset(AppImages.logo2Img),
+            const Spacer(),
+            NavigationLink(text: 'Project', onTap: onNavigateToProject),
+            NavigationLink(text: 'Flame', onTap: onNavigateToFlame),
+            NavigationLink(text: 'Newsletter', onTap: onNavigateToNewsletter),
+            NavigationLink(text: 'Sponsorship', onTap: onNavigateToSponsorship),
+            NavigationIconButton(child: Image.asset(AppImages.searchIcon)),
+            NavigationIconButton(child: Image.asset(AppImages.toggleIcon)),
+            SizedBox(width: isVeryWide ? 80 : 28),
+          ],
+        ),
       ),
     );
   }
 }
 
 class MobileNavigationLayout extends StatefulWidget {
-  const MobileNavigationLayout({super.key});
+  const MobileNavigationLayout({
+    super.key,
+    required this.onNavigateToProject,
+    required this.onNavigateToFlame,
+    required this.onNavigateToNewsletter,
+    required this.onNavigateToSponsorship,
+  });
+
+  final Future<void> Function() onNavigateToProject;
+  final Future<void> Function() onNavigateToFlame;
+  final Future<void> Function() onNavigateToNewsletter;
+  final Future<void> Function() onNavigateToSponsorship;
 
   @override
   State<MobileNavigationLayout> createState() => _MobileNavigationLayoutState();
@@ -104,7 +152,13 @@ class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
                     ],
                   ),
                 ),
-                const Expanded(child: MobileNavigationMenu()),
+                Expanded(
+                    child: MobileNavigationMenu(
+                  onNavigateToProject: widget.onNavigateToProject,
+                  onNavigateToFlame: widget.onNavigateToFlame,
+                  onNavigateToNewsletter: widget.onNavigateToNewsletter,
+                  onNavigateToSponsorship: widget.onNavigateToSponsorship,
+                )),
               ],
             ),
           );

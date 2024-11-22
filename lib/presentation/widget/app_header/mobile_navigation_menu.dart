@@ -3,7 +3,18 @@ import 'package:flutter_journey/core/configs/assets/app_images.dart';
 import 'package:flutter_journey/core/configs/theme/app_colors.dart';
 
 class MobileNavigationMenu extends StatelessWidget {
-  const MobileNavigationMenu({super.key});
+  const MobileNavigationMenu({
+    super.key,
+    required this.onNavigateToProject,
+    required this.onNavigateToFlame,
+    required this.onNavigateToNewsletter,
+    required this.onNavigateToSponsorship,
+  });
+
+  final Future<void> Function() onNavigateToProject;
+  final Future<void> Function() onNavigateToFlame;
+  final Future<void> Function() onNavigateToNewsletter;
+  final Future<void> Function() onNavigateToSponsorship;
 
   static const menuHeight = 56 * 4 + 64;
 
@@ -14,17 +25,21 @@ class MobileNavigationMenu extends StatelessWidget {
       child: ListView(
         shrinkWrap: true,
         children: [
-          const MobileMenuListTile(
-            title: 'Tutorials',
+          MobileMenuListTile(
+            title: 'Project',
+            onTap: onNavigateToProject,
           ),
-          const MobileMenuListTile(
-            title: 'Courses',
+          MobileMenuListTile(
+            title: 'Flame',
+            onTap: onNavigateToFlame,
           ),
-          const MobileMenuListTile(
+          MobileMenuListTile(
             title: 'Newsletter',
+            onTap: onNavigateToNewsletter,
           ),
-          const MobileMenuListTile(
+          MobileMenuListTile(
             title: 'Sponsorship',
+            onTap: onNavigateToSponsorship,
           ),
           Container(
             height: 64.0,
@@ -38,21 +53,31 @@ class MobileNavigationMenu extends StatelessWidget {
 }
 
 class MobileMenuListTile extends StatelessWidget {
-  const MobileMenuListTile({super.key, required this.title});
+  const MobileMenuListTile({
+    super.key,
+    required this.title,
+    required this.onTap,
+  });
+
   final String title;
+  final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 56,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: Text(
-          title,
-          textAlign: TextAlign.left,
-          style: Theme.of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(color: Colors.white),
+      child: InkWell(
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Text(
+            title,
+            textAlign: TextAlign.left,
+            style: Theme.of(context)
+                .textTheme
+                .titleSmall!
+                .copyWith(color: Colors.white),
+          ),
         ),
       ),
     );

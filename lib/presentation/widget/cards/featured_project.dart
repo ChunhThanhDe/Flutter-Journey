@@ -52,11 +52,12 @@ class FeaturedProjectContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final crossAxisCount = calculateCrossAxisCount(screenWidth);
+    final crossAxisCount =
+        screenWidth >= AppBreakpoints.twoColLayoutMinWidth ? 2 : 1;
 
     return SliverPadding(
       padding: EdgeInsets.symmetric(
-          horizontal: 3 * sliverHorizontalPadding(screenWidth) / 5),
+          horizontal: sliverHorizontalPadding(screenWidth)),
       sliver: SliverAlignedGrid.count(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 24,

@@ -59,19 +59,23 @@ class EmailSignup extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 32),
-            // const EmailSignupForm(),
-            // const SizedBox(height: 16),
-            // Text(
-            //   '"Thank you for this great open source. ',
-            //   textAlign: TextAlign.center,
-            //   style: Theme.of(context).textTheme.titleSmall!.copyWith(fontWeight: FontWeight.normal, color: Colors.white),
-            // ),
-            // const SizedBox(height: 8),
-            // Text(
-            //   'ChunhThanHDe',
-            //   textAlign: TextAlign.center,
-            //   style: Theme.of(context).textTheme.titleSmall!.copyWith(fontWeight: FontWeight.normal, color: AppColors.neutral4),
-            // ),
+            const EmailSignupForm(),
+            const SizedBox(height: 16),
+            Text(
+              '"Thank you for this great open source. ',
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall!
+                  .copyWith(fontWeight: FontWeight.normal, color: Colors.white),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'ChunhThanHDe',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  fontWeight: FontWeight.normal, color: AppColors.neutral4),
+            ),
             const SizedBox(height: 120),
           ],
         ),
